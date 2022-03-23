@@ -264,7 +264,7 @@ DMA를 사용하면 CPU가 로컬버퍼에서 메모리로 읽어오는 작업�
 <details>
   <summary>정다은</summary>
   <div markdown="1">
-    👀
+    운영체제가 부팅되면 운영체제는 최조의 init 프로세스를 생성하고, 그 후에 생성되는 모든 사용자 프로세스는 fork 라는 시스템콜을 통해 부모 프로세스를 복제하여 자식 프로세스를 생성하는 방식으로 만들어집니다. 생성된 자식 프로세스는 exec 시스템콜을 통해 새로운 프로그램을 메모리에 덮어 씌운 후 해당 프로그램을 실행합니다.
   </div>
 </details>
 <details>
@@ -284,7 +284,7 @@ DMA를 사용하면 CPU가 로컬버퍼에서 메모리로 읽어오는 작업�
 <details>
   <summary>정다은</summary>
   <div markdown="1">
-    👀
+    IPC란 Interprocess Communication으로, 프로세스란 기본적으로 독자적인 주소 공간을 갖고 다른 프로세스의 영향을 주거나 받지 않는 것이 원칙이지만, 경우에 따라 프로세스 간의 통신과 동기화가 필요할 때 IPC를 활용하게 됩니다.
   </div>
 </details>
 <details>
@@ -304,7 +304,7 @@ DMA를 사용하면 CPU가 로컬버퍼에서 메모리로 읽어오는 작업�
 <details>
   <summary>정다은</summary>
   <div markdown="1">
-    👀
+    IPC의 기법 중 Message Passing 기법에는 direct/indrect 방식이 있는데, 이 중 간접적으로 메시지를 전달하는 방식인 indirect 방식은 통신하려는 프로세스의 이름을 명시적으로 표시하지 않고, mailbox나 port를 통해 간접적으로 전달합니다. 해당 mailbox나 port를 공유하는 프로세스 간의 통신이 가능합니다.
   </div>
 </details>
 <details>
@@ -324,7 +324,7 @@ DMA를 사용하면 CPU가 로컬버퍼에서 메모리로 읽어오는 작업�
 <details>
   <summary>정다은</summary>
   <div markdown="1">
-    👀
+    fork는 부모 프로세스를 복제하여 자식 프로세스를 생성하는 시스템콜, exec는 새로운 프로그램을 메모리에 덮어 씌워 실행하는 시스템콜, wait은 자식 프로세스의 작업이 끝날 때까지 부모 프로세스를 sleep 시켜 기다리게 하는 시스템콜, exit은 자원을 해제하고 부모에게 알리는 종료 시스템콜 입니다.
   </div>
 </details>
 <details>
@@ -347,7 +347,7 @@ DMA를 사용하면 CPU가 로컬버퍼에서 메모리로 읽어오는 작업�
 <details>
   <summary>정다은</summary>
   <div markdown="1">
-    👀
+    Dispatcher란 CPU 스케줄러에 의해 선택된 프로세스에게 실제로 Context Switching을 통해 CPU 제어권을 넘겨주는 역할을 합니다.
   </div>
 </details>
 <details>
@@ -367,7 +367,7 @@ DMA를 사용하면 CPU가 로컬버퍼에서 메모리로 읽어오는 작업�
 <details>
   <summary>정다은</summary>
   <div markdown="1">
-    👀
+    Starvation이란 특정 프로세스가 CPU를 할당받지 못하고 계속해서 무한정 기다리는 상황을 의미합니다.
   </div>
 </details>
 <details>
@@ -387,7 +387,7 @@ DMA를 사용하면 CPU가 로컬버퍼에서 메모리로 읽어오는 작업�
 <details>
   <summary>정다은</summary>
   <div markdown="1">
-    👀
+    선점형 스케줄링은 특정 프로세스가 CPU를 차지하고 있고 해당 프로세스의 CPU 작업이 끝나지 않았더라도 다른 프로세스가 CPU 제어권을 강제로 빼앗을 수 있는 스케줄링이며, 그 예시로는 일정 할당 시간이 지나면 타이머 인터럽트를 통해 프로세스의 작업이 끝나지 않았더라도 프로세스에게서 CPU 제어권을 빼앗아 다른 프로세스에게 넘겨주는 Round Robin 스케줄링을 들 수 있습니다. 비선점형 스케줄링은 특정 프로세스가 CPU를 차지하고 있다면 해당 프로세스가 작업을 끝내고 CPU를 자진으로 반납할 때까지 다른 프로세스가 CPU를 할당받을 수 없는 스케줄링으로, 예시로는 ready queue에 도착한 순서대로 CPU를 할당 받고 사용하는 FCFS 스케줄링이 있습니다.
   </div>
 </details>
 <details>
@@ -407,7 +407,7 @@ DMA를 사용하면 CPU가 로컬버퍼에서 메모리로 읽어오는 작업�
 <details>
   <summary>정다은</summary>
   <div markdown="1">
-    👀
+    Multilevel Queue란 ready queue를 여러 개로 분할하여 관리하는 스케줄링으로, 분할된 큐마다 다른 스케줄링 알고리즘을 활용할 수 있으며, 큐 자체에 대한 스케줄링 알고리즘 또한 필요하다는 특징을 갖습니다. Multilevel Feedback Queue는 Multilevel Queue와 유사하게 ready queue를 여러 개로 분할하여 관리하는 것 분만 아니라 프로세스들이 큐 간에 이동할 수 있다는 특징이 있습니다. Multilevel Queue는 우선순위가 높은 큐에 프로세스가 남아있다면 우선순위가 낮은 큐에 들어있는 프로세스들은 starvation을 겪게되는 문제가 있는데, Multilevel Feedback Queue는 큐 간의 이동이 가능한 특징 및 Aging 기법을 활용하여 해당 문제점을 보완할 수 있습니다.
   </div>
 </details>
 <details>
@@ -430,7 +430,7 @@ DMA를 사용하면 CPU가 로컬버퍼에서 메모리로 읽어오는 작업�
 <details>
   <summary>정다은</summary>
   <div markdown="1">
-    👀
+    Race Condition이란 다수의 프로세스가 하나의 공유 데이터를 접근하려고 경쟁하는 상황을 의미합니다. 예를 들어, 커널 모드로 수행 중일 때 인터럽트가 발생하면 인터럽트 처리 루틴 또한 커널 코드로 Kernel Address Space를 공유하기 때문에 Race Condition 및 데이터 불일치 문제가 수반될 수 있습니다.
   </div>
 </details>
 <details>
